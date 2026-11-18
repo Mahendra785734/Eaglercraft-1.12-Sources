@@ -35,7 +35,7 @@ This file records verified integration points and the implementation plan. It is
 - Added an Eagler-native module base with categories, enabled state, lifecycle callbacks, and per-module keybind storage.
 - Added a module manager and two initial behavior adaptations based on the original GateClient source: Sprint and gamma-based FullBright.
 - Added a five-column GateClient-style ClickGUI using Eaglercraft's existing `GuiScreen`, `drawRect`, and font renderer APIs.
-- Left click toggles a registered module. Right click enters keybind capture. Escape closes the screen; Right Shift opens it by default.
+- Left click toggles a registered module. Right click expands its keybind row; clicking that row captures a new key. Escape closes the screen; Right Shift opens it by default.
 - Wired the runtime bridge into `Minecraft.runTickKeyboard()` and the client tick path in `Minecraft.runTick()`.
 
 ## Not yet complete / not build-verified
