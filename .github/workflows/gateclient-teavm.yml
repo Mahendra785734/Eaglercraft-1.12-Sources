@@ -19,7 +19,9 @@ jobs:
       - name: Build Eaglercraft assets
         run: java -jar desktopRuntime/CompileEPK.jar desktopRuntime/resources javascript/assets.epk
       - name: Compile TeaVM client
-        run: ./gradlew generateJavascript --no-daemon
+        run: |
+          chmod +x gradlew
+          ./gradlew generateJavascript --no-daemon
       - name: Package offline HTML
         run: java -cp "desktopRuntime/MakeOfflineDownload.jar:desktopRuntime/CompileEPK.jar" net.lax1dude.eaglercraft.v1_8.buildtools.workspace.MakeOfflineDownload javascript/OfflineDownloadTemplate.txt javascript/classes.js javascript/assets.epk javascript/Eaglercraft_1.12_Offline_en_US.html javascript/Eaglercraft_1.12_Offline_International.html javascript/lang
       - name: Upload playable offline clients
