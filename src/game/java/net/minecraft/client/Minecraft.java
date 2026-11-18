@@ -49,6 +49,7 @@ import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiControls;
 import net.minecraft.client.gui.GuiGameOver;
 import net.minecraft.client.gui.GuiIngame;
+import me.thef1xer.gateclient.eagler.GateClientPort;
 import net.minecraft.client.gui.GuiIngameMenu;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiMultiplayer;
@@ -1200,6 +1201,7 @@ public class Minecraft implements IThreadListener {
 	 * Runs the current tick.
 	 */
 	public void runTick() throws IOException {
+		GateClientPort.onClientTick();
 		if (this.rightClickDelayTimer > 0) {
 			--this.rightClickDelayTimer;
 		}
@@ -1427,6 +1429,7 @@ public class Minecraft implements IThreadListener {
 			}
 
 			boolean flag = Keyboard.getEventKeyState();
+			GateClientPort.onKeyEvent(i, flag);
 
 			if (flag) {
 				if (i == 62 && this.entityRenderer != null) {
