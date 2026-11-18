@@ -17,6 +17,7 @@ import net.lax1dude.eaglercraft.opengl.RealOpenGLEnums;
 import javax.annotation.Nullable;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
+import me.thef1xer.gateclient.eagler.GateClientPort;
 import net.minecraft.client.gui.chat.IChatListener;
 import net.minecraft.client.gui.chat.NarratorChatListener;
 import net.minecraft.client.gui.chat.NormalChatListener;
@@ -345,6 +346,7 @@ public class GuiIngame extends Gui {
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 		GlStateManager.disableLighting();
 		GlStateManager.enableAlpha();
+		GateClientPort.renderHud();
 	}
 
 	public void renderAttackIndicator(float p_184045_1_, ScaledResolution p_184045_2_) {
