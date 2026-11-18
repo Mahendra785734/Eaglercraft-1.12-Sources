@@ -28,3 +28,18 @@ Original GateClient bootstraps through Forge `@Mod` lifecycle methods and regist
 ## Important
 
 This file records verified integration points and the implementation plan. It is not a completed port and does not claim that any module or build is working yet.
+
+
+## Implemented on this branch
+
+- Added an Eagler-native module base with categories, enabled state, lifecycle callbacks, and per-module keybind storage.
+- Added a module manager and two initial behavior adaptations based on the original GateClient source: Sprint and gamma-based FullBright.
+- Added a five-column GateClient-style ClickGUI using Eaglercraft's existing `GuiScreen`, `drawRect`, and font renderer APIs.
+- Left click toggles a registered module. Right click enters keybind capture. Escape closes the screen; Right Shift opens it by default.
+- Wired the runtime bridge into `Minecraft.runTickKeyboard()` and the client tick path in `Minecraft.runTick()`.
+
+## Not yet complete / not build-verified
+
+- Combat, Player, most HUD, and most Render modules are not ported yet. Empty categories are explicitly marked "Port pending".
+- Module settings, presets, config persistence, and original GateClient component behavior still need porting.
+- No TeaVM compilation or browser runtime test has been run in this environment. Treat these commits as implementation work in progress, not a verified playable HTML release.
