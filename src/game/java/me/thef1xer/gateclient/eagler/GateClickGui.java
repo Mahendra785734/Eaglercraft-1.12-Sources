@@ -82,7 +82,11 @@ public class GateClickGui extends GuiScreen {
         super.mouseClicked(mouseX, mouseY, mouseButton);
     }
 
-    public boolean doesGuiPauseGame() {\n        return false;\n    }\n\n    protected void keyTyped(char typedChar, int keyCode) throws IOException {
+    public boolean doesGuiPauseGame() {
+        return false;
+    }
+
+    protected void keyTyped(char typedChar, int keyCode) throws IOException {
         if (keyCode == 1) {
             GateClientPort.beginBinding(null);
             this.mc.displayGuiScreen(null);
