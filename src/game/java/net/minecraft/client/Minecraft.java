@@ -56,6 +56,7 @@ import net.minecraft.client.gui.GuiNewChat;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiSleepMP;
 import net.minecraft.client.gui.GuiWinGame;
+import me.thef1xer.gateclient.eagler.GateClientRuntime;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.gui.ScreenChatOptions;
 import net.minecraft.client.gui.advancements.GuiScreenAdvancements;
@@ -1290,6 +1291,8 @@ public class Minecraft implements IThreadListener {
 			this.runTickKeyboard();
 		}
 
+		GateClientRuntime.onTick(this);
+
 		if (this.world != null) {
 			if (this.player != null) {
 				++this.joinPlayerCounter;
@@ -1427,6 +1430,7 @@ public class Minecraft implements IThreadListener {
 			}
 
 			boolean flag = Keyboard.getEventKeyState();
+			GateClientRuntime.onKey(this, i, flag);
 
 			if (flag) {
 				if (i == 62 && this.entityRenderer != null) {
